@@ -12,11 +12,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import Login from '../Login';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import ThemeToggleIcon from '../ThemeToggleIcon';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
   const { data: session } = useSession();
@@ -117,6 +116,9 @@ function Header() {
               ))}
             </Menu>
           </Box>
+         
+         {/* light dark mode toggle */}
+          <ThemeToggleIcon />
 
           {/* XS viewport - Logo and Title */}
           <AdbIcon
@@ -139,7 +141,7 @@ function Header() {
               textDecoration: 'none',
             }}
           >
-            Dashboard product
+            Dashboard
           </Typography>
 
 
